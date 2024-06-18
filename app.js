@@ -5,18 +5,17 @@ let stocks = {
     Toppings : ["chocolate", "peanuts"]
 }
 
-
-
 let order = (fruit_idx, prod_fn) => {
     setTimeout(() => {
         console.log(`${stocks.Fruits[fruit_idx]}`)
+        prod_fn()
     }, 2000)
-
-    prod_fn()
 }
 
 let production = () => {
-    
+    setTimeout(() => {
+        console.log("Production has started")
+    }, 0)
 }
 
 order(0, production)
