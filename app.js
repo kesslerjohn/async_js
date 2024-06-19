@@ -18,3 +18,13 @@ let order = (time, work) => {
         }
     })
 }
+
+order(2000, () => console.log(`Customer selected ${stocks.Fruits[0]}`))
+
+.then( () => {
+    return order(0, () => console.log("Production has started"))
+} )
+
+.then( () => {
+    return order(1000, () => console.log("The fruit was chopped"))
+})
