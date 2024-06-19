@@ -28,22 +28,3 @@ order(2000, () => console.log(`Customer selected ${stocks.Fruits[0]}`))
 .then( () => {
     return order(2000, () => console.log("The fruit was chopped"))
 })
-
-.then( () => {
-    return order(1000, () => console.log(`Added ${stocks.Liquid[0]} and ${stocks.Liquid[1]}`))
-})
-
-.then( () => {
-    return order(2000, () => console.log(`Selected ${stocks.Holder[1]} as the container`))
-})
-
-.then( () => {
-    return order(3000, () => console.log(`Added ${stocks.Toppings[0]} and ${stocks.Toppings[1]} as toppings`))
-})
-
-.then( () => {
-    return order(2000, () => console.log("Served ice cream."))
-})
-
-.finally(() => console.log("Shop is closed."))
-
