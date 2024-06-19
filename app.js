@@ -6,3 +6,15 @@ let stocks = {
 }
 
 let shopIsOpen = true
+
+let order = (time, work) => {
+    return new Promise( (resolve, reject) => {
+        if (shopIsOpen) {
+            setTimeout( () => {
+                resolve(work())
+            }, time)
+        } else {
+            reject(console.log("Our shop is closed"))
+        }
+    })
+}
