@@ -7,29 +7,36 @@ let stocks = {
 
 let shopIsOpen = true
 
-let toppingsChoice = () => {
+function time(ms) {
     return new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            resolve(
-            console.log("which topping would you like?")
-        )}, 3000)
+        if (shopIsOpen) {
+            setTimeout(resolve, ms)
+        }
+        else {
+            reject(console.log("Shop is closed"))
+        }
     })
 }
 
 async function kitchen() {
-    console.log("A")
-    console.log("B")
-    await toppingsChoice()
+    try{
+        await time(2000)
+        console.log(`${stocks.Fruits[0]} chosen`)
 
-    console.log("C")
-    console.log("D")
-    console.log("E")
+        console.log("Start production")
+
+        await time(2000)
+        console.log("Next thing")
+
+        await time(3000)
+        console.log("Last ice cream task")
+    }
+    catch(error){
+        console.log("Customer left", error)
+    }
+    finally{
+        console.log("Day ended, shop is closed")
+    }
 }
 
 kitchen()
-
-console.log("doing dishes")
-
-console.log("cleaning tables")
-
-console.log("other tasks")
